@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<umbPackage>
+  <info>
+    <package>
+      <name>Dewd</name>
+      <version>1.4</version>
+      <license url="http://dewd.codeplex.com/license">The MIT License (MIT)</license>
+      <url>http://dewd.codeplex.com/</url>
+      <requirements>
+        <major>4</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Eksponent</name>
+      <website>http://eksponent.com</website>
+    </author>
+    <readme>
+      <![CDATA[<strong style='display:block'>DEWD</strong>
+        <p style='font-size:80%'>- Data Editing With DEWD</p>
+        <p>
+          All configuration is done in: /config/Eksponent.Dewd.config. Remember to give your user rights to access the new DEWD section.
+        </p>
+        <p>
+          For more information, go to <a href='http://dewd.codeplex.com/'>http://dewd.codeplex.com/</a>. For support go to <a href='http://our.umbraco.org/projects/developer-tools/dewd/dewd-general-discussion/'>DEWD discussion on Our</a>.
+        </P>
+		 ]]>
+    </readme>
+  </info>
+  <files>
+    <file>
+      <guid>Eksponent.Dewd.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Eksponent.Dewd.dll</orgName>
+    </file>
+    <file>
+      <guid>Eksponent.Dewd.config</guid>
+      <orgPath>/config</orgPath>
+      <orgName>Eksponent.Dewd.config</orgName>
+    </file>
+    <file>
+      <guid>Eksponent.Dewd.Schema-v1.2.xsd</guid>
+      <orgPath>/config</orgPath>
+      <orgName>Eksponent.Dewd.Schema-v1.2.xsd</orgName>
+    </file>
+    <file>
+      <guid>Edit.aspx</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>Edit.aspx</orgName>
+    </file>
+    <file>
+      <guid>View.aspx</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>View.aspx</orgName>
+    </file>
+    <file>
+      <guid>dewd.png</guid>
+      <orgPath>/umbraco/images/tray</orgPath>
+      <orgName>dewd.png</orgName>
+    </file>
+    <file>
+      <guid>SaveAndReturn.png</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>SaveAndReturn.png</orgName>
+    </file>
+    <file>
+      <guid>cross.png</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>cross.png</orgName>
+    </file>
+    <file>
+      <guid>back.png</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>back.png</orgName>
+    </file>
+    <file>
+      <guid>page_add.png</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>page_add.png</orgName>
+    </file>
+    <file>
+      <guid>excel.png</guid>
+      <orgPath>/umbraco/plugins/Dewd</orgPath>
+      <orgName>excel.png</orgName>
+    </file>
+  </files>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DataTypes>
+    <DataType Name="Dewd Dropdown" Id="2f480d1c-ea9c-4663-89b2-3eafcf07b137" Definition="0e382cf2-64d0-469a-af23-ba54f63581c3">
+      <!--<PreValues>
+        <PreValue Id="8" Value="" />
+      </PreValues>-->
+    </DataType>
+    <DataType Name="Dewd DuoSelect" Id="ada139a2-d000-4bcc-a351-e019a112da0a" Definition="79bb6fe5-86e4-41c5-918a-947da8d6ece1">
+      <!--<PreValues>
+        <PreValue Id="9" Value="" />
+      </PreValues>-->
+    </DataType>
+  </DataTypes>
+  <Actions>
+    <Action runat="install" alias="addApplication" appName="dewd" appAlias="dewd" appIcon="dewd.png"/>
+    <Action runat="install"
+      alias="addApplicationTree"
+      silent="false"
+      initialize="true"
+      sortOrder="0"
+      applicationAlias="dewd"
+      treeAlias="dewd"
+      treeTitle="Dewd"
+      iconOpened=".sprTreeFolder_o"
+      iconClosed=".sprTreeFolder"
+      assemblyName="Eksponent"
+      treeHandlerType="Dewd.Tree"
+      action=""/>
+  </Actions>
+</umbPackage>

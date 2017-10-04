@@ -1,0 +1,140 @@
+﻿<?xml version="1.0"?>
+<dewd xmlns="http://eksponent.com/dewd/1.2">
+  <container name="" />
+  <container name="" hidden="false" />
+  
+  <tweak do="remove" select=""  />
+  <tweak do="clone" select="" external="" />
+
+  <container name="" drt="" connection="" url="" hidden="true">
+    <container name="" />
+    <container name="" hidden="false" />
+    <container name="" drt="" connection="" url="" hidden="true" />
+
+    <tweak do="remove" select="" />
+    <tweak do="clone" select="" />
+
+    <repository name="">
+      <primaryKey name="" />
+    </repository>
+
+    <repository type="TableRepository" name="" icon="" connection="" url="" hidden="false">
+      <primaryKey name="" />
+    </repository>
+
+    <repository type="ObjectRepository" name="" icon="" url="" hidden="true">
+      <primaryKey name="" />
+    </repository>
+
+    <repository type="ExamineRepository" name="" icon="" url="" hidden="true">
+      <primaryKey name="" manual="false" />
+    </repository>
+
+    <repository type="" name="" icon="" connection="" url="" hidden="true">
+      <primaryKey name="" manual="true" />
+
+      <tweak do="remove" select="" />
+      <tweak do="clone" select="" />
+
+      <view name="" />
+
+      <view name="">
+        <sql></sql>
+      </view>
+
+      <view name="" type="" controlType="" pageSize="">
+        <tweak do="remove" select="" />
+        <tweak do="clone" select="" />
+
+        <htmlInject location="head">
+          <![CDATA[<script>setTimeout(function() { alert('hello'); }, 4000);</script>]]>
+        </htmlInject>
+        <htmlInject location="body">
+          <![CDATA[<script>setTimeout(function() { alert('hello'); }, 4000);</script>]]>
+        </htmlInject>
+
+        <sql>SQL</sql>
+        
+        <parameter type="" get="" targetType="" />
+        <parameter type="" get="" targetType="" />
+
+        <columns>
+          <tweak do="remove" select="" />
+          <tweak do="clone" select="" />
+
+          <column type="" field="" format="" title="" width="" nowrap="true" />
+          <column type="" field="" format="" title="" width="" nowrap="false" />
+          <column type="" field="" format="" title="" width="" nowrap="true" />
+        </columns>
+
+        <snippet></snippet>
+      </view>
+
+      <editor type="" tableName="">
+        <tweak do="remove" select="" />
+        <tweak do="clone" select="" />
+
+        <event name="BeforeSave" handler="" />
+        <event name="AfterSave" handler="" />
+        <event name="BeforeDelete" handler="" />
+        <event name="AfterDelete" handler="" />
+        <event name="PageInit" handler="" />
+        <event name="PageLoad" handler="" />
+        <button text="" handler="" />
+
+        <field title="" sourceField="" umbracoDataType="" />
+
+        <field title="" sourceField="" umbracoDataType="">
+          <defaultValue>Text</defaultValue>
+
+          <tweak do="remove" select="" />
+          <tweak do="clone" select="" />
+        </field>
+
+        <field title="" sourceField="" umbracoDataType="">
+          <defaultValue>
+            <value>0</value>
+            <revertTrigger />
+          </defaultValue>
+        </field>
+
+        <field title="" type="" sourceField="" umbracoDataType="" tabTitle="" format="" culture="" readonly="">
+          <nullable whenValueEquals=""></nullable>
+          <listControlDataSource type="" includeEmpty="" emptyValue=""></listControlDataSource>
+          <select sortable="True"></select>
+          <linkingField linkingTable="" localKey="" foreignKey="" />
+          <caption>Text</caption>
+          <validation type="" errorText="" required="" trim="" pattern="" />
+          <defaultValue type="" get="" targetType="">
+            <value>0</value>
+            <revertTrigger type="IsNullOrEmpty" />
+            <revertTrigger type="RegEx" pattern="" negate="true" />
+          </defaultValue>
+        </field>
+      </editor>
+    </repository>
+
+    <repository type="" name="" icon="" connection="" url="" hidden="true">
+      <primaryKey name="" />
+      <view name="">
+        <columns />
+      </view>
+      <editor>
+      </editor>
+    </repository>
+
+    <repository type="" name="" icon="" connection="" url="" hidden="true">
+      <primaryKey name="" />
+      <view name="">
+        <sql></sql>
+        <columns>Comma-separated field-list.</columns>
+      </view>
+      <editor>
+        <field name="">
+          <caption>Text</caption>
+        </field>
+      </editor>
+    </repository>
+
+  </container>
+</dewd>

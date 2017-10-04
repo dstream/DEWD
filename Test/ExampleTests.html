@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:10403/" />
+<title>ExampleTests</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ExampleTests</td></tr>
+</thead>
+<tbody>
+    <tr><td>setTimeout</td><td>60000</td><td></td></tr>
+
+    <!-- login -->
+    <tr><td>open</td><td>/umbraco/login.aspx?redir=%2fumbraco%2fumbraco.aspx</td><td></td></tr>
+    <tr><td>type</td><td>ctl00_body_lname</td><td>admin</td></tr>
+    <tr><td>type</td><td>ctl00_body_passw</td><td>tester</td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_Button1</td><td></td></tr>
+
+    <!-- navigate to dewd -->
+    <tr><td>waitForPageToLoad</td><td></td><td></td></tr>    
+    <tr><td>click</td><td>//img[@src='images/tray/dewd.png']</td><td></td></tr>
+    <tr><td>selectFrame</td><td>tree</td><td></td></tr>
+
+    <!-- tree: go to log viewer -->
+    <tr><td>pause</td><td>7000</td><td></td></tr>
+    <tr><td>click</td><td>//img[following-sibling::div/a/text()='Umbraco hacking tools']</td><td></td></tr>
+    <tr><td>pause</td><td>5000</td><td></td></tr>
+    <tr><td>click</td><td>//div/a[text()='Log viewer']</td><td></td></tr>
+    <tr><td>selectFrame</td><td>relative=up</td><td></td></tr>
+
+    <!-- view: page and search -->
+    <tr><td>selectFrame</td><td>right</td><td></td></tr>
+    <tr><td>pause</td><td>4000</td><td></td></tr>
+    <tr><td>assertText</td><td>xpath=//td</td><td>Login</td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_PageNext</td><td></td></tr>
+    <tr><td>typeAndWait</td><td>ctl00$body$ctl02</td><td>disk cache</td></tr>
+    <tr><td>click</td><td>link=search</td><td></td></tr>
+
+    <!-- view: select views --> 
+    <tr><td>selectAndWait</td><td>ctl00_body_ViewList</td><td>label=Todays entries</td></tr>
+    <tr><td>selectAndWait</td><td>ctl00_body_ViewList</td><td>label=Errors</td></tr>
+
+    <!-- tree: go to applications -->
+    <tr><td>selectFrame</td><td>relative=up</td><td></td></tr>
+    <tr><td>selectFrame</td><td>tree</td><td></td></tr>
+    <tr><td>click</td><td>//div/a[text()='Applications']</td><td></td></tr>
+    <tr><td>selectFrame</td><td>relative=up</td><td></td></tr>
+    <tr><td>selectFrame</td><td>right</td><td></td></tr>
+
+    <!-- view: choose row and save -->
+    <tr><td>pause</td><td>3000</td><td></td></tr>
+    <tr><td>clickAndWait</td><td>//div[@id='inner']/div[2]/div/div/table/tbody/tr[9]/td[1]/a</td><td></td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_TabView1_tab01layer_saveback</td><td></td></tr>
+    <tr><td>selectFrame</td><td>relative=up</td><td></td></tr>
+
+    <!-- tree: go to languages -->
+    <tr><td>selectFrame</td><td>tree</td><td></td></tr>
+    <tr><td>click</td><td>//div/a[text()='Languages']</td><td></td></tr>
+    <tr><td>selectFrame</td><td>relative=up</td><td></td></tr>
+    <tr><td>selectFrame</td><td>right</td><td></td></tr>
+
+    <!-- editor: create new, fail validation -->
+    <tr><td>pause</td><td>3000</td><td></td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_CreateLink</td><td></td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_TabView1_tab01layer_save</td><td></td></tr>
+    <tr><td>assertText</td><td>//div[@class='error']/descendant::li[1]</td><td>glob:Field ISO code*</td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_TabView1_tab01layer_cancel</td><td></td></tr>
+
+    <!-- editor: create and save -->
+    <tr><td>clickAndWait</td><td>ctl00_body_CreateLink</td><td></td></tr></tr>
+    <tr><td>type</td><td>ctl00_body_field0</td><td>en-NZ</td></tr>
+    <tr><td>type</td><td>ctl00_body_field1</td><td>en-NZ</td></tr>
+    <tr><td>clickAndWait</td><td>ctl00_body_TabView1_tab01layer_saveback</td><td></td></tr> 
+
+    <!-- editor: delete -->
+    <tr><td>clickAndWait</td><td>//div[@id='inner']/div[2]/div/div/table/tbody/tr[4]/td[1]/a</td><td></td></tr> 
+    <tr><td>click</td><td>ctl00_body_TabView1_tab01layer_delete</td><td></td></tr>
+    <tr><td>assertConfirmation</td><td>Sure?</td><td></td></tr>
+
+</tbody></table>
+</body>
+</html>

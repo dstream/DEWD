@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E2B0EE0-F5C8-4EEC-94B3-22BA2FD1AB4C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eksponent.Dewd</RootNamespace>
+    <AssemblyName>Eksponent.Dewd</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <DewdTestWebsite>$(ProjectDir)..\..\DEWD.Umbraco600\</DewdTestWebsite>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <!-- option may cause IDataReader to fail -->
+    <DebugType>full</DebugType>
+    <!-- option may cause IDataReader to fail -->
+    <Optimize>false</Optimize>
+    <!-- option may cause IDataReader to fail -->
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <!--<DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>-->
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\Libraries\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\Libraries\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="controls">
+      <HintPath>..\Libraries\controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine">
+      <HintPath>..\Libraries\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\Libraries\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Condition="$(Configuration)=='Debug'" Include="TraceTool">
+      <HintPath>..\Libraries\TraceTool.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco">
+      <HintPath>..\Libraries\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer">
+      <HintPath>..\Libraries\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls">
+      <HintPath>..\Libraries\umbraco.editorControls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\Eksponent.Dewd.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Controls\EditorControls\DuoSelectDataType.js" />
+    <Content Include="package\package.xml" />
+    <EmbeddedResource Include="Default.js" />
+    <Content Include="umbraco\images\tray\dewd.png" />
+    <Content Include="umbraco\plugins\Dewd\back.png" />
+    <Content Include="umbraco\plugins\Dewd\cross.png" />
+    <Content Include="umbraco\plugins\Dewd\Edit.aspx" />
+    <Content Include="umbraco\plugins\Dewd\excel.png" />
+    <Content Include="umbraco\plugins\Dewd\page_add.png" />
+    <Content Include="umbraco\plugins\Dewd\SaveAndReturn.png" />
+    <Content Include="umbraco\plugins\Dewd\View.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="config\Eksponent-Schema-v1.2-Coverage.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="config\Eksponent.Dewd.Schema-v1.2.xsc">
+      <DependentUpon>Eksponent.Dewd.Schema-v1.2.xsd</DependentUpon>
+    </None>
+    <None Include="config\Eksponent.Dewd.Schema-v1.2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="config\Eksponent.Dewd.Schema-v1.2.xss">
+      <DependentUpon>Eksponent.Dewd.Schema-v1.2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Controls\CustomButton.cs" />
+    <Compile Include="Controls\EditorControls\NoSqlDefaultData.cs" />
+    <Compile Include="Controls\MenuButton.cs" />
+    <Compile Include="Controls\IEditorPage.cs" />
+    <Compile Include="Controls\View\Columns\Details.cs" />
+    <Compile Include="Controls\View\Columns\IRequiresContext.cs" />
+    <Compile Include="Controls\View\Columns\MultiSelectBox.cs" />
+    <Compile Include="Controls\View\ISupportsMultiSelection.cs" />
+    <Compile Include="Controls\View\SearchPanel.cs" />
+    <Compile Include="Extensions\DataTableExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Fields\ValueGetters\HttpContext.cs" />
+    <Compile Include="IRequiresMenuButtons.cs" />
+    <Compile Include="Editors\Editor.cs" />
+    <Compile Include="Fields\YesNo.cs" />
+    <Compile Include="Fields\IHasSourceField.cs" />
+    <Compile Include="FormattedException.cs" />
+    <Compile Include="ConfigurationLoader.cs" />
+    <Compile Include="Controls\ContentControlContainer.cs" />
+    <Compile Include="Controls\ContentControlDefinition.cs" />
+    <Compile Include="Controls\EditorControls\DuoSelectDataType.cs" />
+    <Compile Include="Controls\EditorControls\DropDownDataType.cs" />
+    <Compile Include="Controls\EditorControls\IXConfigurable.cs" />
+    <Compile Include="Controls\IListControlDataSource.cs" />
+    <Compile Include="Controls\ListControlHelper.cs" />
+    <Compile Include="Extensions\EditorExtensions.cs" />
+    <Compile Include="MethodCaller.cs" />
+    <Compile Include="Repositories\Examine\ExamineRepository.cs" />
+    <Compile Include="Repositories\Examine\ExamineView.cs" />
+    <Compile Include="Repositories\Object\ObjectEditor.cs" />
+    <Compile Include="Repositories\Object\ObjectRepository.cs" />
+    <Compile Include="Repositories\Object\ObjectUtil.cs" />
+    <Compile Include="Repositories\Object\ObjectView.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\Table\TableButton.cs" />
+    <Compile Include="Repositories\Table\TableListControlDataSource.cs" />
+    <Compile Include="Controls\View\Columns\HtmlField.cs" />
+    <Compile Include="Controls\View\IViewControl.cs" />
+    <Compile Include="Controls\View\ScrollingGrid.cs" />
+    <Compile Include="Controls\View\Snippet.cs" />
+    <Compile Include="Editors\BeforeDeleteEventArgs.cs" />
+    <Compile Include="Editors\BeforeSaveEventArgs.cs" />
+    <Compile Include="Editors\AfterSaveEventArgs.cs" />
+    <Compile Include="Editors\IEditor.cs" />
+    <Compile Include="Editors\RowEventArgs.cs" />
+    <Compile Include="Editors\SaveResult.cs" />
+    <Compile Include="Repositories\Table\TableEditor.cs" />
+    <Compile Include="Repositories\Table\TestEditor.cs" />
+    <Compile Include="Extensions\DataLayerExtensions.cs" />
+    <Compile Include="Extensions\XElementExtensions.cs" />
+    <Compile Include="Fields\Criteria\Criterion.cs" />
+    <Compile Include="Fields\Criteria\Equals.cs" />
+    <Compile Include="Fields\Criteria\IsNullOrEmpty.cs" />
+    <Compile Include="Fields\Criteria\ICriterion.cs" />
+    <Compile Include="Fields\Criteria\IsNull.cs" />
+    <Compile Include="Fields\Criteria\RegEx.cs" />
+    <Compile Include="Fields\ISupportsDefaultValue.cs" />
+    <Compile Include="Fields\NumericField.cs" />
+    <Compile Include="Fields\RetrieveValueEventArgs.cs" />
+    <Compile Include="Fields\IField.cs" />
+    <Compile Include="Fields\Field.cs" />
+    <Compile Include="Repositories\Table\TableLinkingField.cs" />
+    <Compile Include="Fields\Validators\Equals.cs" />
+    <Compile Include="Fields\Validators\RegEx.cs" />
+    <Compile Include="Fields\Validators\IValidator.cs" />
+    <Compile Include="Fields\Validators\Required.cs" />
+    <Compile Include="Fields\ValueGetters\IValueGetter.cs" />
+    <Compile Include="Fields\ValueGetters\Standard.cs" />
+    <Compile Include="Fields\ValueGetters\ValueGetter.cs" />
+    <Compile Include="IXConfigurable.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Table\TableRepository.cs" />
+    <Compile Include="Repositories\Umbraco\UmbracoEditor.cs" />
+    <Compile Include="Repositories\Umbraco\UmbracoRepository.cs" />
+    <Compile Include="Repositories\Umbraco\UmbracoView.cs" />
+    <Compile Include="RequestTemp.cs" />
+    <Compile Include="RowID.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trace.cs" />
+    <Compile Include="Tree.cs" />
+    <Compile Include="TypeInstantiater.cs" />
+    <Compile Include="UiHelper.cs" />
+    <Compile Include="umbraco\plugins\Dewd\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="umbraco\plugins\Dewd\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="umbraco\plugins\Dewd\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="umbraco\plugins\Dewd\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="Views\Buttons\ExportToExcelButton.cs" />
+    <Compile Include="Views\DataTableBasedView.cs" />
+    <Compile Include="IRequiresPageAccess.cs" />
+    <Compile Include="Views\ISupportsPaging.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Repositories\Table\TableView.cs" />
+    <Compile Include="Views\View.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50440</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+         -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+    <!-- Changes to test site -->
+    <Exec Condition="$(Configuration)=='Debug'" Command="xcopy.exe &quot;$(ProjectDir)bin\Eksponent.Dewd.*&quot; &quot;$(DewdTestWebsite)bin\&quot; /Y" />
+    <Exec Condition="$(Configuration)=='Debug'" Command="xcopy.exe &quot;$(ProjectDir)bin\TraceTool.*&quot; &quot;$(DewdTestWebsite)bin\&quot; /Y" />
+    <Exec Condition="$(Configuration)=='Debug'" Command="xcopy.exe &quot;$(ProjectDir)config\Eksponent.Dewd.config&quot; &quot;$(DewdTestWebsite)config\&quot; /Y" />
+    <Exec Condition="$(Configuration)=='Debug'" Command="xcopy.exe &quot;$(ProjectDir)config\Eksponent.Dewd.Schema-v1.2.xsd&quot; &quot;$(DewdTestWebsite)config\&quot; /Y" />
+    <Exec Condition="$(Configuration)=='Debug'" Command="xcopy.exe &quot;$(ProjectDir)umbraco\*.*&quot; &quot;$(DewdTestWebsite)umbraco&quot; /Y /E" />
+    <!-- Prepare package -->
+    <Exec Condition="$(Configuration)=='Release'" Command="xcopy.exe &quot;$(ProjectDir)umbraco\plugins\Dewd\*.aspx&quot; &quot;$(ProjectDir)package\&quot; /Y /E" />
+    <Exec Condition="$(Configuration)=='Release'" Command="xcopy.exe &quot;$(ProjectDir)umbraco\plugins\Dewd\*.png&quot; &quot;$(ProjectDir)package\&quot; /Y /E" />
+    <Exec Condition="$(Configuration)=='Release'" Command="xcopy.exe &quot;$(ProjectDir)umbraco\images\tray\*.png&quot; &quot;$(ProjectDir)package\&quot; /Y /E" />
+    <Exec Condition="$(Configuration)=='Release'" Command="xcopy.exe &quot;$(ProjectDir)bin\Eksponent.Dewd.dll&quot; &quot;$(ProjectDir)package\&quot; /Y /E" />
+    <Exec Condition="$(Configuration)=='Release'" Command="xcopy.exe &quot;$(ProjectDir)config\Eksponent.Dewd.config&quot; &quot;$(ProjectDir)package\&quot; /Y /E" />
+    <Exec Condition="$(Configuration)=='Release'" Command="xcopy.exe &quot;$(ProjectDir)config\Eksponent.Dewd.Schema-v1.2.xsd&quot; &quot;$(ProjectDir)package\&quot; /Y /E" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\Eksponent.Dewd.umb.zip&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="&quot;$(ProjectDir)..\Tools\zip.exe&quot; -j -r &quot;$(ProjectDir)package\Eksponent.Dewd.umb.zip&quot; &quot;$(ProjectDir)package\*.*&quot; -i *.dll *.aspx *.xml *.png *.xsd *.Dewd.config" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.png&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.gif&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.aspx&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.config&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.xsd&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.xsc&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.xss&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.cs&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\*.dll&quot;" />
+    <Exec Condition="$(Configuration)=='Release'" Command="del &quot;$(ProjectDir)package\Eksponent-Schema-v1.2-Coverage.xml&quot;" />
+  </Target>
+</Project>
